@@ -36,3 +36,7 @@ use Mix.Config
 #   sync_nodes_optional: []
 # config :kernel,
 #   sync_nodes_timeout: 30000
+
+# Logger format
+config :logger, :console,
+  format: "$date $time $metadata[$level] $message\n"

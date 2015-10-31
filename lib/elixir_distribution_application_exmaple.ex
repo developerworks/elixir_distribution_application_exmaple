@@ -1,15 +1,11 @@
 defmodule ElixirDistributionApplicationExmaple do
   use Application
-
-  def start(:normal, []) do
-    ElixirDistributionApplicationExmaple.Supervisor.start_link
-  end
-
-  def start({:takeover, _node}, []) do
-    ElixirDistributionApplicationExmaple.Supervisor.start_link
-  end
-
-  def stop(_state) do
-    :ok
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+    children = [
+      worker(ElixirDistributionApplicationExmaple.Worker, [])
+    ]
+    opts = [strategy: :one_for_one, name: ElixirDistributionApplicationExmaple.Supervisor]
+    Supervisor.start_link(children, opts)
   end
 end
