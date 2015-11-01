@@ -1,7 +1,9 @@
 defmodule ElixirDistributionApplicationExmaple do
   use Application
+  require Logger
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
+    Logger.info("ElixirDistributionApplicationExmaple application in #{inspect type} mode")
     children = [
       worker(ElixirDistributionApplicationExmaple.Worker, [])
     ]
