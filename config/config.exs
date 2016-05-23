@@ -39,4 +39,4 @@ use Mix.Config
 
 # Logger format
 config :logger, :console,
-  format: "$date $time $metadata[$level] $message\n"
+  format: "$date $time $metadata[$level] $message"

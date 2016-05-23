@@ -17,7 +17,7 @@ defmodule ElixirDistributionApplicationExmaple.Mixfile do
 
   defp deps do
     [
-      {:exrm, "~> 0.19.9"}
+      {:exrm, "~> 1.0.4"}
     ]
   end
 end
